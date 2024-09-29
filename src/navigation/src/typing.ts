@@ -1,0 +1,61 @@
+export type RootStackParamList = {
+    SplashScreen: undefined;
+    IntroScreen: undefined;
+    WelcomeScreen: undefined;
+    SelectCountriesScreen: {
+        onSelectCountry: (country: register.ICountry) => void;
+    };
+    SelectCurrenciesScreen: {
+        onSelectCurrency: (currency: addWallet.ICurrency) => void;
+    };
+    Main: undefined;
+    HomeScreen: undefined;
+    WalletScreen: undefined;
+    SendScreen: undefined;
+    ActivityScreen: undefined;
+    AccountScreen: undefined;
+    RegisterScreen: undefined;
+    SuccessRegisterScreen: undefined;
+    LoginScreen: undefined;
+    AddWalletScreen: undefined;
+    ProfileInforScreen: undefined;
+    EditProfileScreen: undefined;
+    ChangePassScreen: undefined;
+    FirstInforScreen: undefined;
+    RecipientScreen: undefined;
+    SendToCadaScreen: undefined;
+    RecipientInforScreen: undefined;
+    PaymentMethodScreen: undefined;
+    PayWithWallet: undefined;
+    PaymentResultScreen: undefined;
+    SetupPasscodeScreen: undefined;
+    KYCTierScreen: undefined;
+    SetupPasscodeSuccess: undefined;
+    IntroPasscode: undefined;
+    DetailWallet: {
+        wallet: wallet.IWallet;
+    };
+    FundWalletScreen: undefined;
+    WalletAccountDetail: undefined;
+    ReceiveTypeScreen: undefined;
+    ReceiveEmail: undefined;
+    WithdrawToBank: undefined;
+    AddWithdrawBank: undefined;
+    SwapScreen: undefined;
+    PayManualBank: undefined;
+    RecipientEmailOrPhone: undefined;
+    SendToEmail: undefined;
+    SendToTelephone: undefined;
+    CreateReceiveQR: undefined;
+    QRCodeReceive: undefined;
+    MobileMoney: undefined;
+    InstantPayment: undefined;
+    TransactionPasscode: undefined;
+    VerifyOTPTransaction: undefined;
+    ResultGlobalScreen: {
+        type?: 'warning' | 'success' | 'sending';
+        desc?: string;
+        name?: string;
+        value?: string;
+    };
+};

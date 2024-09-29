@@ -1,0 +1,64 @@
+diff --git a/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/index.tsx b/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/index.tsx
+index 7a6a7f5..5e4f11e 100644
+--- a/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/index.tsx
++++ b/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/index.tsx
+@@ -38,6 +38,7 @@ const BottomBarComponent: (
+       renderCircle,
+       borderTopLeftRight = false,
+       shadowStyle,
++      bottomColor
+     } = props;
+ 
+     const [itemLeft, setItemLeft] = useState<any[]>([]);
+@@ -105,19 +106,19 @@ const BottomBarComponent: (
+     const d = useMemo(() => {
+       return type === 'DOWN'
+         ? getPathDown(
+-            maxWidth,
+-            getTabbarHeight,
+-            getCircleWidth,
+-            borderTopLeftRight,
+-            circlePosition
+-          )
++          maxWidth,
++          getTabbarHeight,
++          getCircleWidth,
++          borderTopLeftRight,
++          circlePosition
++        )
+         : getPathUp(
+-            maxWidth,
+-            getTabbarHeight + 30,
+-            getCircleWidth,
+-            borderTopLeftRight,
+-            circlePosition
+-          );
++          maxWidth,
++          getTabbarHeight + 30,
++          getCircleWidth,
++          borderTopLeftRight,
++          circlePosition
++        );
+     }, [
+       borderTopLeftRight,
+       circlePosition,
+@@ -265,6 +266,7 @@ const BottomBarComponent: (
+               path={d}
+             />
+             {_renderTabContainer(props)}
++            {style?.paddingBottom && <View style={{ position: 'absolute', backgroundColor: bottomColor, bottom: 0, left: 0, right: 0, height: style?.paddingBottom as number }} />}
+           </View>
+         );
+       },
+diff --git a/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/model.ts b/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/model.ts
+index 1447090..17875a5 100644
+--- a/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/model.ts
++++ b/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/BottomBarView/model.ts
+@@ -62,6 +62,7 @@ interface Props {
+     selectedTab: string;
+     navigate: (selectedTab: string) => void;
+   }) => JSX.Element;
++  bottomColor?: string;
+ }
+ 
+ export type NavigatorBottomBarProps = DefaultNavigatorOptions<

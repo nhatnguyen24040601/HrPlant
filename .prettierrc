@@ -1,0 +1,22 @@
+{
+    "bracketSameLine": true,
+    "printWidth": 120,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "arrowParens": "always",
+    "bracketSpacing": false,
+    "embeddedLanguageFormatting": "auto",
+    "insertPragma": false,
+    "jsxSingleQuote": false,
+    "proseWrap": "preserve",
+    "quoteProps": "as-needed",
+    "vueIndentScriptAndStyle": false,
+    "singleQuote": true,
+    "semi": true,
+    "useTabs": false,
+    "importOrder": ["^/(.*)$$", "^[./]", "^assets/(.*)$", "^components/(.*)$", "^utils/(.*)$"],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "importOrderGroupNamespaceSpecifiers": true,
+    "jsxBracketSameLine": true
+}

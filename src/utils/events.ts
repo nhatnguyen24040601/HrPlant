@@ -1,0 +1,3 @@
+export const DEVICE_EVENT = {
+    REFRESH_WALLETS: 'REFRESH_WALLETS',
+};
